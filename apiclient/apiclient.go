@@ -63,6 +63,9 @@ type Client interface {
 	// entries.
 	GetLeagueByID(ctx context.Context, r region.Region, leagueID string) (*LeagueList, error)
 
+	// ----- League Exp API -----
+	GetLeagueExpEntries(ctx context.Context, r region.Region, q queue.Queue, tier string, division string, page int) ([]LeagueEntry, error)
+
 	// ----- Match API -----
 
 	// GetMatch returns a match by match ID.
